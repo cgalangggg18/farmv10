@@ -3,6 +3,24 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import '../models/address/philippine_address_models.dart';
 
+class AddressService {
+  static const String baseUrl = 'https://psgc.gitlab.io/api';
+
+  Future<List<Region>> getRegions() async {
+    try {
+      final response = await http.get(Uri.parse('$baseUrl/regions.json')).timeout(const Duration(seconds: 15));
+      if (response.statusCode == 200) {
+        List<dynamic> data = json.decode(response.body);
+        return data.map((json) => Region.fromJson(json)).toList()
+          ..sort((a, b) => a.name.compareTo(b.name));
+      }
+      return [];
+    } catch (e) {
+      debugPrint('Error fetching regions: $e');
+      return [];
+    }
+  }
+
   Future<List<Province>> getProvinces(String regionCode) async {
     try {
       final endpoints = ['provinces', 'highly-urbanized-cities', 'independent-component-cities'];
