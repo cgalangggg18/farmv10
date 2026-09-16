@@ -3,8 +3,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import '../models/address/philippine_address_models.dart';
 
-
-
   Future<List<Province>> getProvinces(String regionCode) async {
     try {
       final endpoints = ['provinces', 'highly-urbanized-cities', 'independent-component-cities'];
