@@ -12,24 +12,6 @@ import 'package:farmm/providers/bulk_buyer_registration_provider.dart';
 import 'package:farmm/screens/language_selection_screen.dart';
 import 'firebase_options.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => LocaleProvider()),
-        ChangeNotifierProvider(create: (_) => UserProvider()),
-        ChangeNotifierProvider(create: (_) => FarmerRegistrationProvider()),
-        ChangeNotifierProvider(create: (_) => LogisticsRegistrationProvider()),
-        ChangeNotifierProvider(create: (_) => BulkBuyerRegistrationProvider()),
-      ],
-      child: const AgriGrowApp(),
-    ),
-  );
-}
 
 class AgriGrowApp extends StatelessWidget {
   const AgriGrowApp({super.key});
