@@ -1,0 +1,90 @@
+# AgriGrow Cloud Schema
+
+type User @table {
+  username: String! @unique
+  email: String! @unique
+  phone: String! @unique
+  role: String! # farmer, logistics, bulk_buyer
+  passwordHash: String!
+  isVerified: Boolean! @default(value: false)
+  createdAt: Timestamp! @default(expr: "request.time")
+}
+
+type Address @table {
+  country: String @default(value: "Philippines")
+  region: String
+  regionCode: String
+  province: String
+  provinceCode: String
+  municipality: String
+  municipalityCode: String
+  barangay: String
+  barangayCode: String
+  street: String
+  houseNumber: String
+  postalCode: String
+  createdAt: Timestamp! @default(expr: "request.time")
+}
+
+type FarmerProfile @table {
+  user: User! @unique
+  firstName: String!
+  middleName: String
+  lastName: String!
+  personalAddress: Address
+  farmAddress: Address
+  farmSize: Float # in hectares
+  utilityBillPath: String
+  validIdPath: String
+  ownersAddressDocPath: String
+  ownershipDocsPath: String
+}
+
+type LogisticsProfile @table {
+  user: User! @unique
+  isCompany: Boolean! @default(value: false)
+  # Individual Details
+  firstName: String
+  middleName: String
+  lastName: String
+  dob: Date
+  gender: String
+  personalAddress: Address
+  # Company Details
+  companyName: String
+  businessRegNumber: String
+  companyEmail: String
+  contactNumber: String
+  companyAddress: String
+  # Vehicle Details
+  vehicleType: String
+  vehicleBrand: String
+  vehicleModel: String
+  yearModel: String
+  plateNumber: String
+  vin: String
+  maxLoadCapacity: String
+  # Documents
+  driverLicensePath: String
+  vehicleOrPath: String
+  vehicleCrPath: String
+  vehiclePhotoPath: String
+  governmentIdPath: String
+  nbiClearancePath: String
+  driverPhotoPath: String
+  driverUtilityBillPath: String
+  businessPermitPath: String
+  birCertificatePath: String
+  dtiSecCertificatePath: String
+  companyUtilityBillPath: String
+}
+
+type BulkBuyerProfile @table {
+  user: User! @unique
+  firstName: String!
+  lastName: String!
+  businessName: String
+  businessAddress: Address
+  birCertificatePath: String
+  businessPermitPath: String
+}

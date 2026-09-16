@@ -1,0 +1,75 @@
+# AgriGrow Mutations
+
+# 1. Create a basic user
+mutation CreateUser(
+  $username: String!,
+  $email: String!,
+  $phone: String!,
+  $role: String!,
+  $passwordHash: String!
+) @auth(level: PUBLIC) {
+  user_insert(data: {
+    username: $username,
+    email: $email,
+    phone: $phone,
+    role: $role,
+    passwordHash: $passwordHash
+  })
+}
+
+# 2. Register a Farmer
+mutation RegisterFarmer(
+  $userId: UUID!,
+  $firstName: String!,
+  $lastName: String!,
+  $farmSize: Float,
+  $utilityBillPath: String,
+  $validIdPath: String,
+  $ownersAddressDocPath: String,
+  $ownershipDocsPath: String
+) @auth(level: PUBLIC) {
+  farmerProfile_insert(data: {
+    userId: $userId,
+    firstName: $firstName,
+    lastName: $lastName,
+    farmSize: $farmSize,
+    utilityBillPath: $utilityBillPath,
+    validIdPath: $validIdPath,
+    ownersAddressDocPath: $ownersAddressDocPath,
+    ownershipDocsPath: $ownershipDocsPath
+  })
+}
+
+# 3. Register Logistics
+mutation RegisterLogistics(
+  $userId: UUID!,
+  $isCompany: Boolean!,
+  $firstName: String,
+  $lastName: String,
+  $vehicleType: String,
+  $plateNumber: String
+) @auth(level: PUBLIC) {
+  logisticsProfile_insert(data: {
+    userId: $userId,
+    isCompany: $isCompany,
+    firstName: $firstName,
+    lastName: $lastName,
+    vehicleType: $vehicleType,
+    plateNumber: $plateNumber
+  })
+}
+
+# 4. Register Bulk Buyer
+mutation RegisterBulkBuyer(
+  $userId: UUID!,
+  $firstName: String!,
+  $lastName: String!,
+  $businessName: String
+) @auth(level: PUBLIC) {
+  bulkBuyerProfile_insert(data: {
+    userId: $userId,
+    firstName: $firstName,
+    lastName: $lastName,
+    businessName: $businessName
+  })
+}

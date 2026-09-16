@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "131698588163",
+    "project_id": "agri-grow-eb3da",
+    "storage_bucket": "agri-grow-eb3da.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131698588163:android:07d04cbf8a93daa231ac36",
+        "android_client_info": {
+          "package_name": "com.example.farmm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX4q2SHTaFl7RfDxFa3jw82Qq9aAdW1EI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

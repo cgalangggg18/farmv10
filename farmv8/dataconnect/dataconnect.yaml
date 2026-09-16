@@ -1,0 +1,13 @@
+specVersion: "v1"
+serviceId: "agri-grow-eb3da-service"
+location: "asia-southeast1"
+schemas:
+  - source: "./schema"
+    datasource:
+      postgresql:
+        database: "agri-grow-eb3da-database"
+        cloudSql:
+          instanceId: "agri-grow-eb3da-instance"
+          # schemaValidation: "STRICT"     # STRICT mode makes Postgres schema match Data Connect exactly.
+          # schemaValidation: "COMPATIBLE" # COMPATIBLE mode makes Postgres schema compatible with Data Connect.
+connectorDirs: ["./example"]
