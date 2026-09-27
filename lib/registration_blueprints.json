@@ -1,0 +1,110 @@
+{
+  "farmer_registration_example": {
+    "role_details": {
+      "id": 1,
+      "name": "Farmer"
+    },
+  "phonenumber": "09857851780",
+  "username": "juanfarmer",
+  "password": "SecretPassword123",
+  "firstname": "Juan",
+  "middle_name": "Dela",
+  "lastname": "Cruz",
+  "language": "English",
+  "role": "Farmer",
+  "onboarding_status": "Profile_Created",
+  "payment_method": "GCash",
+  "region": "Region IV-A",
+  "province": "Laguna",
+  "municipality": "Calamba",
+  "baranggay": "Putho-Tuntungin",
+  "house_number": "12",
+  "street": "Mabini Street",
+  "postal_code": "4027",
+  "farm_region": "Region IV-A",
+  "farm_province": "Laguna",
+  "farm_municipality": "Calamba",
+  "farm_barangay": "Putho-Tuntungin",
+  "farm_house_number": "12",
+  "farm_street": "Mabini Street",
+  "farm_postal_code": "4027",
+  "farm_size": "2.5",
+    "documents": {
+      "utility_bill": {
+        "id": 1,
+        "name": "Utility Bills",
+        "url": "https://example.com/docs/utility-bill.jpg"
+      },
+      "valid_id": {
+        "id": 2,
+        "name": "Valid_ID",
+        "url":  "https://example.com/docs/id-front.jpg"
+      },
+      "owners_address": {
+        "id": 3,
+        "name": "Owner_Address",
+        "url": "https://example.com/docs/address-proof.jpg"
+      },
+      "ownership_docs": {
+        "id": 4,
+        "name":  "Farm_Ownership",
+        "url":  "https://example.com/docs/farm-ownership.jpg"
+      }
+    }
+},
+  "logistics_registration_example": {
+    "role_details": {
+      "id": 2,
+      "name": "Logistics"
+    },
+    "account": {
+      "phone": "09223334444",
+      "email": "logistics@example.com"
+    },
+    "documents": {
+      "driver": {
+        "license": {
+          "id": 1,
+          "name": "Driver License",
+          "url": "https://..."
+        }
+      },
+      "vehicle": {
+        "photo": {
+          "id": 8,
+          "name": "Vehicle Photo",
+          "url": "https://..."
+        }
+      },
+      "company": {
+        "permit": {
+          "id": 9,
+          "name": "Business Permit",
+          "url": "https://..."
+        }
+      }
+    }
+  },
+  "bulk_buyer_registration_example": {
+    "role_details": {
+      "id": 3,
+      "name": "Bulk Buyer"
+    },
+    "email": "buyer@example.com",
+    "business_details": {
+      "name": "Big Store Corp"
+    },
+    "documents": {
+      "utility_bill": {
+        "id": 1,
+        "name": "Utility Bill",
+        "url": "https://..."
+      },
+      "business_permit": {
+        "id": 2,
+        "name": "Business Permit",
+        "url": "https://..."
+      }
+    }
+  }
+}
